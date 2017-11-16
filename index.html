@@ -5,7 +5,7 @@
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="CameraPos.js"></script>
-    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+    
   </head>
   <body>
     <a-scene>
@@ -15,8 +15,11 @@
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
       <a-sky color="#ECECEC"></a-sky>
       <a-entity position ="0 0 0">
-        <a-camera></a-camera>
-        <a-animation>easing="linear" attribute="position" dur="10000" to="0 0 360" repeat="indefinite"</a-animation>
+        <a-camera>
+          <a-animation easing="linear" attribute="position" dur="10000" to="0 1 -2" repeat="0"></a-animation>
+          <a-animation easing="linear" attribute="position" dur="10000" to="0 1 -2" repeat="0"></a-animation>
+        </a-camera>
+        
       </a-entity>
       
       
