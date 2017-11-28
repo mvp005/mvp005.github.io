@@ -10,14 +10,14 @@
   <body>
     <a-scene>
       <a-assets>
-       <audio id="paradise" src="https://cdn.glitch.com/80c3e4c6-21c3-4c12-9316-1852077680bd%2Fparadise.mp3?1510846125117"></audio> 
+       <audio id="paradise" src="https://cdn.glitch.com/80c3e4c6-21c3-4c12-9316-1852077680bd%2Fwind_1234-mike-koenig.mp3?1511883549661"></audio> 
       </a-assets>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" sound="src: #paradise; autoplay: true" shadow></a-box>
       <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
       <a-sky color="#ECECEC"></a-sky>
-      <a-entity sound="src: #paradise; autoplay: true" position ="0 0 0">
+      <a-entity position ="0 0 0">
         <a-camera>
           <a-animation easing="linear" attribute="position" dur="10000" from= " 0 0 0" to="7 0 0" begin = "2000"></a-animation>
           <a-animation easing="linear" attribute="position" dur="10000" from= "7 0 0" to= "4 1 -2" begin = "12000"></a-animation>
