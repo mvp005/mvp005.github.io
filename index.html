@@ -12,24 +12,16 @@
     <a-scene>
       <a-assets>
        <audio id="wind1" src="https://cdn.glitch.com/80c3e4c6-21c3-4c12-9316-1852077680bd%2Fwind_1234-mike-koenig.mp3?1511883549661"></audio>
-       <audio id="wind2" src="https://cdn.glitch.com/80c3e4c6-21c3-4c12-9316-1852077680bd%2Fwind-howl_zJ85_pVu.mp3?1512004662905"></audio>
        <audio id="wind3" src="https://cdn.glitch.com/80c3e4c6-21c3-4c12-9316-1852077680bd%2Fphasing-hissy-wind-looping_fyR_wBEu.mp3?1512004663500"></audio>
       </a-assets>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" sound="src: #wind1; autoplay: false" shadow></a-box>
-      <a-sound src="#wind3" autoplay="true" loop="true" position = "0 -5 -10 "></a-sound>
+      <a-sound id="" src="#wind3" autoplay="true" loop="true" position = "0 -5 -10 "></a-sound>
       <a-sphere position="0 1.25 -10" radius="1.25" color="#EF2D5E" shadow></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
       <a-sky color="#ECECEC"></a-sky>
       <a-entity position ="0 0 0">
-        <a-camera id="movement">
-          <a-animation easing="ease-sine" attribute="position" dur="500" from= " .05 1 0" to="0 1.1 -.5" begin = "0000"></a-animation>
-          <a-animation easing="ease-sine" attribute="position" dur="500" from= "0.0 1.1 -.5" to= "-.05 1 -1" begin = "500"></a-animation>
-          <a-animation easing="ease-sine" attribute="position" dur="500" from= "-.05 1 -1" to="0 1.1 -1.5" begin = "1000"></a-animation>
-          <a-animation easing="ease-sine" attribute="position" dur="500" from= "0 1.1 -1.5" to= ".05 1 -2" begin = "1500"></a-animation>
-      
-        </a-camera>
-        
+        <a-camera id="movement"></a-camera>
       </a-entity>
       
       
