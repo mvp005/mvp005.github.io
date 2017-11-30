@@ -13,13 +13,14 @@ function loadWalking() {
   human.innerHTML = html;
 }
 
-var event = new Event
+var event = document.createEvent('Event');
+event.initEvent('build', true, true)
 
 let counter = 0;
 
 function playSounds() {
-  if (counter >= 6) {
-    document.getElementById("windy3").autoplay = true;
+  if (counter >= 1) {
+    document.getElementById("windy3").components.sound.playSound();
   }
   console.log(counter);
   counter += 1;

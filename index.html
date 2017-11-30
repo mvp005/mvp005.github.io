@@ -15,7 +15,7 @@
        <audio id="wind3" src="https://cdn.glitch.com/80c3e4c6-21c3-4c12-9316-1852077680bd%2Fphasing-hissy-wind-looping_fyR_wBEu.mp3?1512004663500"></audio>
       </a-assets>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" sound="src: #wind1; autoplay: false" shadow></a-box>
-      <a-sound id="windy3" on="trigger"  src="#wind3" loop="true" position = "0 -5 -10 "></a-sound>
+      <a-entity id="windy3" sound="src:#wind3; loop: true; volume: .09" position="0 -5 -10 "></a-entity>
       <a-sphere position="0 1.25 -10" radius="1.25" color="#EF2D5E" shadow></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
