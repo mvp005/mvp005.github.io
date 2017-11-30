@@ -1,10 +1,14 @@
-let human = document.getElementById("movement");
-let html = '';
-for (var i = 0; i < 20; i += 1) {
-  html += `
-  <a-animation easing="ease-sine" attribute="position" dur="500" from= " .05 1 0" to="0 1.1 -.5" begin = "0000"></a-animation>
-  <a-animation easing="ease-sine" attribute="position" dur="500" from= "0.0 1.1 -.5" to= "-.05 1 -1" begin = "500"></a-animation>
-  <a-animation easing="ease-sine" attribute="position" dur="500" from= "-.05 1 -1" to="0 1.1 -1.5" begin = "1000"></a-animation>
-  <a-animation easing="ease-sine" attribute="position" dur="500" from= "0 1.1 -1.5" to= ".05 1 -2" begin = "1500"></a-animation>
-``
+function loadWalking() {
+  let human = document.getElementById("movement");
+  let html = '';
+  const SCALE = 500;
+  const DIST = 0.5;
+  for (var i = 0; i < 20; i += 1) {
+    html += `<a-animation easing="ease-sine" attribute="position" dur="` + SCALE.toString() + `" from= " .05 1 ` + (-i*2).toString() + `" to="0 1.1 ` + (-i*2 - DIST).toString() + `" begin = "` +  (i * 2).toString() + `"></a-animation>
+    <a-animation easing="ease-sine" attribute="position" dur="` + SCALE.toString() + `" from= "0.0 1.1 ` + (-i*2 - DIST).toString() + `" to= "-.05 1 ` + (-i*2 - DIST * 2).toString() + `" begin = "` +  (i * 2 + SCALE).toString() + `"></a-animation>
+    <a-animation easing="ease-sine" attribute="position" dur="` + SCALE.toString() + `" from= "-.05 1 ` + (-i*2 - DIST * 2).toString() + `" to="0 1.1 ` + (-i*2 - DIST * 3).toString() + `" begin = "` +  (i * 2 + SCALE * 2).toString() + `"></a-animation>
+    <a-animation easing="ease-sine" attribute="position" dur="` + SCALE.toString() + `" from= "0 1.1 ` + (-i*2 - DIST * 3).toString() + `" to= ".05 1 ` + (-i*2 - DIST * 4).toString() + `" begin = "` +  (i * 2 + SCALE * 3).toString() + `"></a-animation>`
+  }
+
+  human.innerHTML = html;
 }
