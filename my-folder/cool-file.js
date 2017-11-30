@@ -5,7 +5,7 @@ stats: {
 function loadWalking() {
   let human = document.getElementById("movement");
   let html = '';
-  const SCALE = 500;
+  const SCALE = 50;
   var DIST = 0.3;
   var currentDist; // Relative Location
   var currentTime;
@@ -19,7 +19,7 @@ function loadWalking() {
   }
 
   DIST = 0.15;
-  const DEPTH = .03;
+  const DEPTH = 0;
   var currentHeight2;
   var currentDist2; // Absolute Location (negative)
   var currentTime2;
@@ -35,11 +35,11 @@ function loadWalking() {
   var currentX = 0.5;
   var currentY = currentHeight2;
   var rotateX = 0;
-  var rotateY = 3;
+  var rotateY = -2;
   var X = currentX - rotateX;
   var Y = currentY - rotateY;
   var rotateScale = 25;
-  var theta_offset = -Math.PI/15;
+  var theta_offset = Math.PI*19/9;
   var prevX = X * Math.cos(theta_offset) - Y * Math.sin(theta_offset) + rotateX;
   var prevY = Y * Math.cos(theta_offset) + X * Math.sin(theta_offset) + rotateY;
   var currentTime3;
@@ -53,7 +53,7 @@ function loadWalking() {
     currentTime3 = currentTime2 + i*rotateScale;
   }
   html += `<a-animation easing="ease-in-sine" attribute="position" dur="800" from= "` + prevX.toString() + ` ` + prevY.toString() + ` ` + currentDist2.toString() + `" to="` + prevX.toString() + ` -20 ` + currentDist2.toString() + `" begin = "` +  (currentTime3 + 25).toString() + `"></a-animation>`;
-
+  
   human.innerHTML = html;
 }
 
