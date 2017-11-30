@@ -1,7 +1,7 @@
 function loadWalking() {
   let human = document.getElementById("movement");
   let html = '';
-  const SCALE = 500;
+  const SCALE = 50;
   var DIST = 0.3;
   var currentDist;
   var currentTime;
@@ -16,12 +16,20 @@ function loadWalking() {
   
   
   DIST = 0.15;
+  const DEPTH = .03;
+  var curentHeight2;
+  var currentDist2;
+  var currentTime2;
   for (var i = 0; i < 20; i += 1) {
-    html += `<a-animation easing="ease-in-sine" attribute="position" dur="` + SCALE.toString() + `" from= ".05 1 ` + (-i*DIST*4 - currentDist).toString() + `" to="0 1.1 ` + (-i*4*DIST - DIST - currentDist).toString() + `" begin = "` +  (currentTime + 5000 + i * 4 * SCALE).toString() + `"></a-animation>
-    <a-animation easing="ease-out-sine" attribute="position" dur="` + SCALE.toString() + `" from= "0.0 1.1 ` + (-i*DIST*4 - DIST - currentDist).toString() + `" to= "-.05 1 ` + (-i*4*DIST - DIST * 2 - currentDist).toString() + `" begin = "` +  (currentTime + 5000 + i * 4 * SCALE + SCALE).toString() + `"></a-animation>
-    <a-animation easing="ease-in-sine" attribute="position" dur="` + SCALE.toString() + `" from= "-.05 1 ` + (-i*DIST*4 - DIST * 2 - currentDist).toString() + `" to="0 1.1 ` + (-i*4*DIST - DIST * 3 - currentDist).toString() + `" begin = "` +  (currentTime + 5000 + i * 4 * SCALE + SCALE * 2).toString() + `"></a-animation>
-    <a-animation easing="ease-out-sine" attribute="position" dur="` + SCALE.toString() + `" from= "0 1.1 ` + (-i*DIST*4 - DIST * 3 - currentDist).toString() + `" to= ".05 1 ` + (-i*4*DIST - DIST * 4 - currentDist).toString() + `" begin = "` +  (currentTime + 5000 + i * 4 * SCALE + SCALE * 3).toString() + `"></a-animation>` 
+    html += `<a-animation easing="ease-in-sine" attribute="position" dur="` + SCALE.toString() + `" from= ".05 ` + (1-i*DEPTH) + ` ` + (-i*DIST*4 - currentDist).toString() + `" to="0 ` + (1.1-i*DEPTH) + ` ` + (-i*4*DIST - DIST - currentDist).toString() + `" begin = "` +  (currentTime + 5000 + i * 4 * SCALE).toString() + `"></a-animation>
+    <a-animation easing="ease-out-sine" attribute="position" dur="` + SCALE.toString() + `" from= "0.0 ` + (1.1-i*DEPTH) + ` ` + (-i*DIST*4 - DIST - currentDist).toString() + `" to= "-.05 ` + (1-i*DEPTH) + ` ` + (-i*4*DIST - DIST * 2 - currentDist).toString() + `" begin = "` +  (currentTime + 5000 + i * 4 * SCALE + SCALE).toString() + `"></a-animation>
+    <a-animation easing="ease-in-sine" attribute="position" dur="` + SCALE.toString() + `" from= "-.05 ` + (1-i*DEPTH) + ` ` + (-i*DIST*4 - DIST * 2 - currentDist).toString() + `" to="0 ` + (1.1-i*DEPTH) + ` ` + (-i*4*DIST - DIST * 3 - currentDist).toString() + `" begin = "` +  (currentTime + 5000 + i * 4 * SCALE + SCALE * 2).toString() + `"></a-animation>
+    <a-animation easing="ease-out-sine" attribute="position" dur="` + SCALE.toString() + `" from= "0 ` + (1.1-i*DEPTH) + ` ` + (-i*DIST*4 - DIST * 3 - currentDist).toString() + `" to= ".05 ` + (1-i*DEPTH) + ` ` + (-i*4*DIST - DIST * 4 - currentDist).toString() + `" begin = "` +  (currentTime + 5000 + i * 4 * SCALE + SCALE * 3).toString() + `"></a-animation>` 
+    currentDist2 = ;
+    currentTime2 = 
   }
+  
+  
 
   human.innerHTML = html;
 }
