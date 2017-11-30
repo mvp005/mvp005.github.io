@@ -4,18 +4,23 @@
     <title>Hello, WebVR! - A-Frame</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="CameraPos.js"></script>
     <script src="my-folder/cool-file.js"></script>
-    
+
   </head>
   <body onload="loadWalking()">
     <a-scene>
       <a-assets>
        <audio id="wind1" src="https://cdn.glitch.com/80c3e4c6-21c3-4c12-9316-1852077680bd%2Fwind_1234-mike-koenig.mp3?1511883549661"></audio>
        <audio id="wind3" src="https://cdn.glitch.com/80c3e4c6-21c3-4c12-9316-1852077680bd%2Fphasing-hissy-wind-looping_fyR_wBEu.mp3?1512004663500"></audio>
+       <audio id="bridge1" src="bridgeCreak.mp3"></audio>
       </a-assets>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" sound="src: #wind1; autoplay: false" shadow></a-box>
       <a-entity id="windy3" sound="src:#wind3; loop: true; volume: .09" position="0 -5 -10 "></a-entity>
+      <a-entity id="windy1" sound="src:#wind1; loop: true; volume: 5" position="0 -5 -40 "></a-entity>
+      <a-entity id="bridgeCreak1" sound="src:#bridge1;volume:3" position-"0 -1 -30"></a-entity>
+      <a-entity json-model="src: bridge.json; scale: .01 .01 .01; position: 0 -10 0;"></a-entity>
       <a-sphere position="3 1.25 -10" radius="1.25" color="#EF2D5E" shadow></a-sphere>
       <a-sphere position="-3 1.25 -20" radius="1.25" color="#EF2D5E" shadow></a-sphere>
       <a-sphere position="3 1.25 -30" radius="1.25" color="#EF2D5E" shadow></a-sphere>
@@ -26,9 +31,9 @@
       <a-entity position ="0 0 0">
         <a-camera id="movement" position=".05 -.6 0"></a-camera>
       </a-entity>
-      
-      
-      
+
+
+
     </a-scene>
   </body>
 </html>
