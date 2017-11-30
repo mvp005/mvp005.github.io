@@ -12,3 +12,17 @@ function loadWalking() {
 
   human.innerHTML = html;
 }
+
+var event = new Event
+
+let counter = 0;
+
+function playSounds() {
+  if (counter >= 6) {
+    document.getElementById("windy3").autoplay = true;
+  }
+  console.log(counter);
+  counter += 1;
+}
+
+setInterval(playSounds, 500);
