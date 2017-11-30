@@ -3,6 +3,8 @@ stats: {
 }
 
 function loadWalking() {
+  let button = document.getElementsByClassName("a-enter-vr-button");
+  button[0].click();
   let human = document.getElementById("movement");
   let html = '';
   const SCALE = 500;
