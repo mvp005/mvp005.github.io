@@ -1,3 +1,7 @@
+stats: {
+  warnings: false
+}
+
 function loadWalking() {
   let human = document.getElementById("movement");
   let html = '';
@@ -36,21 +40,21 @@ function loadWalking() {
   var X = currentX - rotateX;
   var Y = currentY - rotateY;
   var rotateScale = 25;
-  var prevX = X * Math.cos(0) - Y * Math.sin(0) + rotateX;
-  var prevY = Y * Math.cos(0) + X * Math.sin(0) + rotateY;
+  var theta_offset = -Math.PI/15;
+  var prevX = X * Math.cos(theta_offset) - Y * Math.sin(theta_offset) + rotateX;
+  var prevY = Y * Math.cos(theta_offset) + X * Math.sin(theta_offset) + rotateY;
   var currentTime3;
   for (var i = 0; i < 200; i += 1) {
     var theta = Math.cos(Math.PI * i / 30);
-    var x = X * Math.cos(theta) - Y * Math.sin(theta) + rotateX;
-    var y = Y * Math.cos(theta) + X * Math.sin(theta) + rotateY;
-    console.log(x, y);
+    var x = X * Math.cos(theta_offset + theta) - Y * Math.sin(theta_offset + theta) + rotateX;
+    var y = Y * Math.cos(theta_offset + theta) + X * Math.sin(theta_offset + theta) + rotateY;
     html += `<a-animation easing="linear" attribute="position" dur="` + rotateScale.toString() + `" from="` + prevX.toString() + ` ` + prevY.toString() + ` ` + currentDist2.toString() + `" to="` + x.toString() + ` ` + y.toString() + ` ` + currentDist2.toString() + `" begin = "` + (currentTime2 + i*rotateScale).toString() + `"></a-animation>`;
     prevX = x;
     prevY = y;
     currentTime3 = currentTime2 + i*rotateScale;
   }
   
-  html += `<a-animation easing="ease-in-cubic" attribute="position" dur="7000" from= "` + prevX.toString() + ` ` + prevY.toString() + ` ` + currentDist2.toString() + `" to="` + prevX.toString() + `-30` + ` ` + currentDist2.toString() + `" begin = "` +  (currentTime3 + 25).toString() + `"></a-animation>`
+  html += `<a-animation easing="ease-in-sine" attribute="position" dur="7000" from= "` + prevX.toString() + ` ` + prevY.toString() + ` ` + currentDist2.toString() + `" to="` + prevX.toString() + `-30` + ` ` + currentDist2.toString() + `" begin = "` +  (currentTime3 + 25).toString() + `"></a-animation>`;
 
   human.innerHTML = html;
 }
