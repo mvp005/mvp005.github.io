@@ -5,9 +5,7 @@
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="CameraPos.js"></script>
-    <script>
-    
-    </script>
+    <script src="my-folder/cool-file.js"></script>
     
   </head>
   <body>
@@ -24,9 +22,12 @@
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
       <a-sky color="#ECECEC"></a-sky>
       <a-entity position ="0 0 0">
-        <a-camera>
-          <a-animation easing="ease-bounce" attribute="position" dur="1000" from= " 0 0 0" to="0 .2 -1" begin = "0000"></a-animation>
-          <a-animation easing="ease-bounce" attribute="position" dur="1000" from= "0 .2 -1" to= "0 0 -2" begin = "1000"></a-animation>
+        <a-camera id="movement">
+          <a-animation easing="ease-sine" attribute="position" dur="500" from= " .05 1 0" to="0 1.1 -.5" begin = "0000"></a-animation>
+          <a-animation easing="ease-sine" attribute="position" dur="500" from= "0.0 1.1 -.5" to= "-.05 1 -1" begin = "500"></a-animation>
+          <a-animation easing="ease-sine" attribute="position" dur="500" from= "-.05 1 -1" to="0 1.1 -1.5" begin = "1000"></a-animation>
+          <a-animation easing="ease-sine" attribute="position" dur="500" from= "0 1.1 -1.5" to= ".05 1 -2" begin = "1500"></a-animation>
+      
         </a-camera>
         
       </a-entity>
