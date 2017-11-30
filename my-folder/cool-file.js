@@ -5,7 +5,7 @@ stats: {
 function loadWalking() {
   let human = document.getElementById("movement");
   let html = '';
-  const SCALE = 50;
+  const SCALE = 500;
   var DIST = 0.3;
   var currentDist; // Relative Location
   var currentTime;
@@ -53,7 +53,7 @@ function loadWalking() {
     currentTime3 = currentTime2 + i*rotateScale;
   }
   html += `<a-animation easing="ease-in-sine" attribute="position" dur="800" from= "` + prevX.toString() + ` ` + prevY.toString() + ` ` + currentDist2.toString() + `" to="` + prevX.toString() + ` -20 ` + currentDist2.toString() + `" begin = "` +  (currentTime3 + 25).toString() + `"></a-animation>`;
-  
+
   human.innerHTML = html;
 }
 
